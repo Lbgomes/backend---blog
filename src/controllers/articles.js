@@ -120,7 +120,6 @@ exports.ListArticle = async (req, res) => {
         const id = req.params.id
         const data = req.body
         const updatedArticle = await blog.doc(id).update(data)
-        console.log(id, data, updatedArticle)
             res.status(201).send({ status: 1, msg: updatedArticle })
         } catch (error) {
             res.status(500).send({ status: 0, msg: 'Algo deu errado.', error: error })
